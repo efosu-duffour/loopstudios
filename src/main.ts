@@ -2,6 +2,9 @@ import './style.css'
 import Lenis from "lenis"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import closeSvg from "/images/icon-close.svg"
+import hamburgerSvg from "/images/icon-hamburger.svg";
+
 // Initialize a new Lenis instance for smooth scrolling
 const lenis = new Lenis();
 
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (Math.floor(header_cont.contentRect.width) > 667) {
             if (!mobileNav.classList.contains("close")) {
-                (menuButton.querySelector("img") as HTMLImageElement).src = "/loopstudios/images/icon-hamburger.svg";
+                (menuButton.querySelector("img") as HTMLImageElement).src = hamburgerSvg;
                 animateMenuOut();
                 scrollBody(true);
                 mobileNav.classList.add("close");
@@ -44,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileNav.classList.toggle("close");
 
         if (mobileNav.classList.contains("close")) {
-            (menuButton.querySelector("img") as HTMLImageElement).src = "loopstudios/images/icon-hamburger.svg";
+            (menuButton.querySelector("img") as HTMLImageElement).src = hamburgerSvg;
             scrollBody(true);
             animateMenuOut();
         }
         else {
-            (menuButton.querySelector("img") as HTMLImageElement).src = "loopstudios/images/icon-close.svg";
+            (menuButton.querySelector("img") as HTMLImageElement).src = closeSvg;
             scrollBody(false);
             animateMenuIn();
         }

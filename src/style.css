@@ -27,7 +27,7 @@ body {
   grid-template-rows: repeat(3, auto);
   width: 100vw;
 
-  overflow-x: clip;
+ 
 
   background-color: rebeccapurple;
 }
@@ -92,6 +92,8 @@ nav ul{
 .header-container {
   grid-column: 2 / 3;
   grid-row: 1/ 2;
+
+  overflow-x: clip;
   
 
   container-type: inline-size;
@@ -162,27 +164,38 @@ nav ul{
 }
 
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 100%;
-  display: grid;
-  grid-template-columns: 1fr min(900px, 90vw) 1fr;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  
+  overflow-x: clip;
 
   z-index: 1;
 
   width: 100%;
   height: 100dvh;
 
-  background-color: black;
+  background-color: transparent;
 
-  padding-top: calc(var(--padding-top) + 70px);
-
-
+  
+  
   nav {
-    grid-column: 2 / 3;
+    position: absolute;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    grid-template-columns: 1fr min(900px, 90vw) 1fr;
+    
+    padding-top: calc(var(--padding-top) + 70px);
+    background-color: black;
   }
 
   nav ul {
+    grid-column: 2 / 3;
     flex-direction: column;
     gap: 30px;
 

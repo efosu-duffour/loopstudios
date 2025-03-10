@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function animateMenuIn() {
         const tl = gsap.timeline()
         tl
-        .to(".mobile-nav", {
+        .to(".mobile-nav nav", {
             left: "0", 
             duration: 0.3
         })
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function animateMenuOut() {
-        gsap.to(".mobile-nav", {
+        gsap.to(".mobile-nav nav", {
             left: "100%"
         })
     }
